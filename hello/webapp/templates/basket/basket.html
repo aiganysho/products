@@ -9,20 +9,32 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Price</th>
+          <th scope="col">Имя</th>
+          <th scope="col">Адрес</th>
+            <th scope="col">Телефон </th>
         </tr>
       </thead>
       <tbody>
-            {% for product in basket %}
+            {% for total_product in total_products %}
             <tr>
-                <td><a href={% url 'delete_cart' product.pk %}">{{ product.product.name }}</a></td>
-                <td>{{ product.quantity }}</td>
-                <td>{{ product.product.price }}</td>
+                <td>{{ total_product.basket.product.name }}</td>
+                <td>{{ total_product.basket.quantity }}</td>
+                <td>{{ total_product.basket.product.price }}</td>
+                <th> {{ total_product.total }}</th>
                 <td>
+                    <form action="{% url 'delete_cart' total_product.basket.pk %}" method="POST">
+                        {% csrf_token %}
+                        <p><input type="submit" value="удалить"></p>
+                    </form>
+
             </tr>
         {% endfor %}
       </tbody>
     </table>
+    Total : {{ total }}
+    </tr>
+    <h3>Оформить заказ</h3>
+    <form action="{% url 'order_cart' %}" method="POST">
+        {% include 'partial/form.html' with button_text='оформить' %}
+    </form>
 {% endblock content %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block page_header %}List products{% endblock page_header %}
+{% block content %}
+    <br/>
+    {% if not basket %}
+        <h2> No product</h2>
+        {% else %}
+    {% endif %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+            {% for product in basket %}
+            <tr>
+                <td><a href={% url 'delete_cart' product.pk %}">{{ product.product.name }}</a></td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.product.price }}</td>
+                <td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock content %}

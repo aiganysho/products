@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block page_header %}Create new product!{% endblock page_header %}
+
+{#{% block content %}#}
+{#    <form action="/product/add/" method="post">#}
+{#        {% include "partial/form.html" with button_text="create" %}#}
+{#    </form>#}
+{#{% endblock content %}#}
+
+{% block content %}
+<form action="" method="POST">
+    {% include 'partial/form.html' with button_text='Создать' %}
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block menu %}
+      <li><a href="{% url "add-product" %}">Create Product</a></li>
+      <li><a href="{% url "list-product" %}">List product</a></li>
+      <li><a href="{% url "delete-product" product.id %}">Delete Product</a></li>
+      <li><a href="{% url "update-product" product.id %}">Update Product</a></li>
+{% endblock menu %}
+
+
+{% block page_header %}Product: {{ product.id }}{% endblock page_header %}
+{% block content %}
+
+    <p>Name: {{ product.name }}</p>
+    <p>Description: {{ product.description }}</p>
+    <p>Category: {{ product.category }}</p>
+    <p>Remainder: {{ product.remainder }}</p>
+    <p>Price: {{ product.price }}</p>
+
+{% endblock content %}>

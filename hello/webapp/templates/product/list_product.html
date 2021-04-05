@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block menu %}<li><a href="{% url "view_cart" %}">Корзина</a></li>{% endblock menu %}
+{% block page_header %}List products{% endblock page_header %}
+{% block content %}
+    <br/>
+    {% if not lists %}
+        <h2>No To-Do List</h2>
+        {% else %}
+        {% include "partial/search_form.html" %}
+
+    {% endif %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+{#          <th scope="col">Category</th>#}
+        </tr>
+      </thead>
+      <tbody>
+            {% for product in lists %}
+            <tr>
+                <th><a href="{% url "view-product" product.pk %}">{{ product.id }}</a></th>
+                <td>{{ product.name }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                    <form action="{% url 'add_cart' product.pk %}" method="POST">
+                        {% include 'partial/form.html' with button_text='Добавить в корзину' %}
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% include 'partial/paginate.html' %}
+
+{% endblock content %}

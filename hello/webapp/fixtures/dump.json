@@ -1,0 +1,199 @@
+[
+{
+  "model": "webapp.product",
+  "pk": 1,
+  "fields": {
+    "name": "butter",
+    "description": "lorem ask ugk",
+    "category": "other",
+    "remainder": 1,
+    "price": "65.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 2,
+  "fields": {
+    "name": "sumsung s9",
+    "description": "color white, ssd 125",
+    "category": "cell_phones",
+    "remainder": 20,
+    "price": "30000.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 3,
+  "fields": {
+    "name": "xxx-case",
+    "description": "case for phone, color black, size 10*20",
+    "category": "accessories",
+    "remainder": 5,
+    "price": "5000.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 4,
+  "fields": {
+    "name": "ifjreifj",
+    "description": "iuehoif u54ri9poh4jeriuc fh489irf",
+    "category": "other",
+    "remainder": 3,
+    "price": "400.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 5,
+  "fields": {
+    "name": "salt",
+    "description": "",
+    "category": "food",
+    "remainder": 15,
+    "price": "70.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 6,
+  "fields": {
+    "name": "shuger",
+    "description": "",
+    "category": "food",
+    "remainder": 4,
+    "price": "50.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 7,
+  "fields": {
+    "name": "bags",
+    "description": "black for notebook",
+    "category": "accessories",
+    "remainder": 0,
+    "price": "650.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 8,
+  "fields": {
+    "name": "glasses",
+    "description": "red wwnthreth",
+    "category": "accessories",
+    "remainder": 1,
+    "price": "500.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 9,
+  "fields": {
+    "name": "umberlla",
+    "description": "",
+    "category": "accessories",
+    "remainder": 4,
+    "price": "950.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 10,
+  "fields": {
+    "name": "eggs",
+    "description": "gg gyu hgyhoiuh",
+    "category": "food",
+    "remainder": 8,
+    "price": "10.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 11,
+  "fields": {
+    "name": "avacado",
+    "description": "",
+    "category": "food",
+    "remainder": 4,
+    "price": "60.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 12,
+  "fields": {
+    "name": "6thththwrhtr",
+    "description": "thje56hyw56hy",
+    "category": "other",
+    "remainder": 2,
+    "price": "45.00"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 1,
+  "fields": {
+    "name_user": "tyyy",
+    "telephone": "yyy",
+    "adress": "yyy",
+    "date_time": "2021-04-05T12:20:04.320Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 2,
+  "fields": {
+    "name_user": "thrwth",
+    "telephone": "7",
+    "adress": "8",
+    "date_time": "2021-04-05T12:22:52.705Z"
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 1,
+  "fields": {
+    "product": 7,
+    "order": 1,
+    "quantity": 4
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 2,
+  "fields": {
+    "product": 9,
+    "order": 1,
+    "quantity": 6
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 3,
+  "fields": {
+    "product": 11,
+    "order": 1,
+    "quantity": 3
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$RTlmBocVnQgZ$D1u0av9Ej+9Qg9a54NpEEm4jZqEPWQQPkVLZ/jn6lhY=",
+    "last_login": "2021-04-05T06:49:00.617Z",
+    "is_superuser": true,
+    "username": "aiganysh",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-04-05T06:48:29.950Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

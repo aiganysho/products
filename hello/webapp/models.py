@@ -38,3 +38,27 @@ class ProductInBasket(models.Model):
 
     def __str__(self):
         return f'{self.id} {self.product} {self.quantity}'
+
+
+class Order(models.Model):
+    name_user = models.CharField(max_length=100, null=False, blank=False)
+    telephone = models.CharField(null=False, blank=False, max_length=100)
+    adress = models.CharField(null=False, blank=False, max_length=300)
+    date_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'Orders'
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
+
+    def __str__(self):
+        return f'{self.id} {self.name_user} {self.telephone} '
+
+
+class OrderProduct(models.Model):
+    product = models.ForeignKey('webapp.Product', related_name='product_order', on_delete=models.CASCADE)
+    order = models.ForeignKey('webapp.Order', related_name='order_product', on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False, blank=False)
+
+    def __str__(self):
+        return "{} | {}".format(self.product, self.order)

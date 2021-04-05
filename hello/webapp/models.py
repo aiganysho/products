@@ -20,3 +20,21 @@ class Product(models.Model):
 
     def __str__(self):
         return f'{self.id}. {self.name}'
+
+
+class ProductInBasket(models.Model):
+    product = models.ForeignKey(
+        'webapp.Product',
+        on_delete=models.CASCADE,
+        related_name='lists',
+        null=False,
+        blank=False
+    )
+    quantity = models.PositiveIntegerField()
+
+    class Meta:
+        db_table = 'baskets'
+        verbose_name = 'корзина'
+
+    def __str__(self):
+        return f'{self.id} {self.product} {self.quantity}'

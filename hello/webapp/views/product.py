@@ -37,6 +37,19 @@ class ProductList(ListView):
             return self.form.cleaned_data['search_value']
         return None
 
+
+    # def get_queryset(self):
+    # queryset = super().get_queryset()
+    # if self.search_value:
+    #     query = Q(name__icontains=self.search_value) | Q(description__icontains=self.search_value)
+    #     queryset = queryset.filter(query)
+    # return queryset.order_by('category', 'name').exclude(remainder=0)
+
+    def get_search_data(self):
+        if self.form.is_valid():
+            return self.form.cleaned_data['search_value']
+        return None
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['search_form'] = self.form

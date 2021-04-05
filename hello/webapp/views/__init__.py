@@ -10,5 +10,9 @@ from webapp.views.product import (
 from webapp.views.product_basket import (
     ProductBasketCreate,
     ProductBasketView,
-    # ProductBasketDelete
+    ProductBasketDelete
+)
+
+from webapp.views.order import (
+    CreateOrder
 )

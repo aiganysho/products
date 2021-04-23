@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block menu %}<li><a href="{% url "view_cart" %}">Корзина</a></li>{% endblock menu %}
+{% block menu %}<li><a href="{% url "product:view_cart" %}">Корзина</a></li>{% endblock menu %}
 {% block page_header %}List products{% endblock page_header %}
 {% block content %}
     <br/>
@@ -22,12 +22,12 @@
       <tbody>
             {% for product in lists %}
             <tr>
-                <th><a href="{% url "view-product" product.pk %}">{{ product.id }}</a></th>
+                <th><a href="{% url "product:view" product.pk %}">{{ product.id }}</a></th>
                 <td>{{ product.name }}</td>
                 <td>{{ product.quantity }}</td>
                 <td>{{ product.price }}</td>
                 <td>
-                    <form action="{% url 'add_cart' product.pk %}" method="POST">
+                    <form action="{% url 'product:add_cart' product.pk %}" method="POST">
                         {% include 'partial/form.html' with button_text='Добавить в корзину' %}
                     </form>
                 </td>

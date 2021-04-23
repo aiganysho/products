@@ -4,10 +4,10 @@
 {% block page_header %}Are you sure you want to delete the product  "{{ product.name }}"?{% endblock page_header %}
 
 {% block content%}
-    <form action="{% url "delete-product" product.id %}", method="POST">
+    <form action="{% url "product:delete" product.id %}", method="POST">
         {% include 'partial/form.html' with button_text="Yes" %}
 {#        <input type="submit" value='yes'>#}
         </br>
-        <a href="{% url "view-product" product.id %}">Cancellation!</a>
+        <a href="{% url "product:view" product.id %}">Cancellation!</a>
     </form>
 {% endblock content %}

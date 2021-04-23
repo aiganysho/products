@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, DeleteView, CreateView, U
 from django.db.models import Q
 from django.utils.http import urlencode
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 from webapp.models import Product, categories
 from webapp.form import ProductForm, SearchForm, ProductBasketForm
@@ -27,7 +28,7 @@ class ProductList(ListView):
 
         if self.search_data:
             queryset = queryset.filter(
-                Q(summary__icontains=self.search_data) |
+                Q(name__icontains=self.search_data) |
                 Q(description__icontains=self.search_data)
             )
         return queryset.exclude(remainder=0).order_by("category", "name")
@@ -63,9 +64,10 @@ class ProjectCreate(CreateView):
     template_name = 'product/create_product.html'
     form_class = ProductForm
     model = Product
+    permission_required = 'webapp.add_product'
     def get_success_url(self):
         return reverse(
-            'view-product',
+            'product:view',
             kwargs={'pk': self.object.pk}
         )
 
@@ -75,9 +77,10 @@ class ProductUpdate(UpdateView):
     template_name = 'product/product_update.html'
     form_class = ProductForm
     context_key = 'product'
+    permission_required = 'webapp.change_product'
     def get_success_url(self):
         return reverse(
-            'view-product',
+            'product:view',
             kwargs={'pk': self.object.pk}
         )
 
@@ -86,6 +89,7 @@ class ProductDelete(DeleteView):
     template_name = 'product/product_delete.html'
     model = Product
     context_key = 'product'
-    success_url = reverse_lazy('list-product')
+    success_url = reverse_lazy('product:list')
+    permission_required = 'webapp.delete_product'
 
 

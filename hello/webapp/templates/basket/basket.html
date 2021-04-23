@@ -22,7 +22,7 @@
                 <td>{{ total_product.basket.product.price }}</td>
                 <th> {{ total_product.total }}</th>
                 <td>
-                    <form action="{% url 'delete_cart' total_product.basket.pk %}" method="POST">
+                    <form action="{% url 'product:delete_cart' total_product.basket.pk %}" method="POST">
                         {% csrf_token %}
                         <p><input type="submit" value="удалить"></p>
                     </form>
@@ -34,7 +34,7 @@
     Total : {{ total }}
     </tr>
     <h3>Оформить заказ</h3>
-    <form action="{% url 'order_cart' %}" method="POST">
+    <form action="{% url 'product:order_cart' %}" method="POST">
         {% include 'partial/form.html' with button_text='оформить' %}
     </form>
 {% endblock content %}

@@ -16,10 +16,10 @@ class CreateOrder(View):
             telephone = form.cleaned_data.get('telephone')
             adress = form.cleaned_data.get('adress')
 
-            order = Order.objects.create(name_user=name,telephone=telephone, adress=adress )
+            order = Order.objects.create(name_user=name, telephone=telephone, adress=adress )
             for cart in ProductInBasket.objects.all():
                 OrderProduct.objects.create(order=order, product=cart.product, quantity=cart.quantity)
                 cart.delete()
-            return redirect('view_cart')
+            return redirect('product:order_cart')
         return render(request, 'basket/basket.html', context={'form': form})
 

@@ -11,7 +11,7 @@ class ProductBasketCreate(CreateView):
     form_class = ProductBasketForm
 
     def get_success_url(self):
-        return reverse('list-product')
+        return reverse('product:list')
 
     def form_valid(self, form):
         product = get_object_or_404(Product, id=self.kwargs.get('pk'))
@@ -59,4 +59,4 @@ class ProductBasketDelete(DeleteView):
     template_name = 'basket/delete.html'
     model = ProductInBasket
     context_key = 'basket'
-    success_url = reverse_lazy('view_cart')
+    success_url = reverse_lazy('product:view_cart')

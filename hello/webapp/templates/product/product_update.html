@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% block menu %}<li><a href="{% url "view-product" product.id %}">Back list</a></li>{% endblock menu %}
+{% block menu %}<li><a href="{% url "product:view" product.id %}">Back list</a></li>{% endblock menu %}
 {% block page_header %}Edit product {{ product.id }}{% endblock page_header %}
 
 {% block content %}
-    <form action="{% url "update-product" product.id %}" method="post">
+    <form action="{% url "product:update" product.id %}" method="post">
         {% include "partial/form.html" with button_text="Edite product" %}
     </form>
 {% endblock content %}

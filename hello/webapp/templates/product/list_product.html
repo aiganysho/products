@@ -5,7 +5,7 @@
 
 
 {% endblock menu %}
-{% block page_header %}List products{% endblock page_header %}
+
 {% block content %}
     <br/>
     {% if not lists %}
@@ -14,6 +14,7 @@
 {#        {% include "partial/search_form.html" %}#}
 
     {% endif %}
+    <h1>List products</h1>
     <table class="table">
       <thead>
         <tr>
@@ -21,7 +22,7 @@
           <th scope="col">Name</th>
           <th scope="col">Quantity</th>
           <th scope="col">Price</th>
-{#          <th scope="col">Category</th>#}
+
         </tr>
       </thead>
       <tbody>

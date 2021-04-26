@@ -60,7 +60,7 @@ class ProductDetailView(DetailView):
     model = Product
 
 
-class ProjectCreate(CreateView):
+class ProjectCreate(PermissionRequiredMixin, CreateView):
     template_name = 'product/create_product.html'
     form_class = ProductForm
     model = Product
@@ -72,7 +72,7 @@ class ProjectCreate(CreateView):
         )
 
 
-class ProductUpdate(UpdateView):
+class ProductUpdate(PermissionRequiredMixin, UpdateView):
     model = Product
     template_name = 'product/product_update.html'
     form_class = ProductForm
@@ -85,7 +85,7 @@ class ProductUpdate(UpdateView):
         )
 
 
-class ProductDelete(DeleteView):
+class ProductDelete(PermissionRequiredMixin, DeleteView):
     template_name = 'product/product_delete.html'
     model = Product
     context_key = 'product'

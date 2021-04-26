@@ -2,12 +2,12 @@ from django.views.generic import View, ListView
 from webapp.models import Order, ProductInBasket, OrderProduct
 from webapp.form import OrderForm
 from django.shortcuts import render, reverse, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
 
 class CreateOrder(View):
-
     def post(self, request, *args, **kwargs):
         print('bvbvbv')
         form = OrderForm(data=request.POST)
@@ -18,8 +18,6 @@ class CreateOrder(View):
             session = self.request.session.get('basket', [])
             print(session)
             order = Order.objects.create(name_user=name, telephone=telephone, adress=adress, user=request.user )
-            # for cart in ProductInBasket.objects.all():
-
 
             for cart in ProductInBasket.objects.filter(pk__in=session):
                 OrderProduct.objects.create(order=order, product=cart.product, quantity=cart.quantity)
@@ -28,7 +26,7 @@ class CreateOrder(View):
         return render(request, 'basket/basket.html', context={'form': form})
 
 
-class OrderView(ListView):
+class OrderView(LoginRequiredMixin, ListView):
     template_name = 'product/list_order.html'
     model = Order
     context_object_name = 'orders'

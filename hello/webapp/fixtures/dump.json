@@ -6,7 +6,7 @@
     "name": "butter",
     "description": "lorem ask ugk",
     "category": "other",
-    "remainder": 1,
+    "remainder": 0,
     "price": "65.00"
   }
 },
@@ -17,7 +17,7 @@
     "name": "sumsung s9",
     "description": "color white, ssd 125",
     "category": "cell_phones",
-    "remainder": 20,
+    "remainder": 0,
     "price": "30000.00"
   }
 },
@@ -28,7 +28,7 @@
     "name": "xxx-case",
     "description": "case for phone, color black, size 10*20",
     "category": "accessories",
-    "remainder": 5,
+    "remainder": 0,
     "price": "5000.00"
   }
 },
@@ -39,7 +39,7 @@
     "name": "ifjreifj",
     "description": "iuehoif u54ri9poh4jeriuc fh489irf",
     "category": "other",
-    "remainder": 3,
+    "remainder": 0,
     "price": "400.00"
   }
 },
@@ -50,7 +50,7 @@
     "name": "salt",
     "description": "",
     "category": "food",
-    "remainder": 15,
+    "remainder": 7,
     "price": "70.00"
   }
 },
@@ -61,7 +61,7 @@
     "name": "shuger",
     "description": "",
     "category": "food",
-    "remainder": 4,
+    "remainder": 0,
     "price": "50.00"
   }
 },
@@ -83,7 +83,7 @@
     "name": "glasses",
     "description": "red wwnthreth",
     "category": "accessories",
-    "remainder": 1,
+    "remainder": 0,
     "price": "500.00"
   }
 },
@@ -94,7 +94,7 @@
     "name": "umberlla",
     "description": "",
     "category": "accessories",
-    "remainder": 4,
+    "remainder": 0,
     "price": "950.00"
   }
 },
@@ -105,7 +105,7 @@
     "name": "eggs",
     "description": "gg gyu hgyhoiuh",
     "category": "food",
-    "remainder": 8,
+    "remainder": 0,
     "price": "10.00"
   }
 },
@@ -116,7 +116,7 @@
     "name": "avacado",
     "description": "",
     "category": "food",
-    "remainder": 4,
+    "remainder": 0,
     "price": "60.00"
   }
 },
@@ -127,14 +127,47 @@
     "name": "6thththwrhtr",
     "description": "thje56hyw56hy",
     "category": "other",
-    "remainder": 2,
+    "remainder": 0,
     "price": "45.00"
+  }
+},
+{
+  "model": "webapp.productinbasket",
+  "pk": 20,
+  "fields": {
+    "product": 3,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.productinbasket",
+  "pk": 21,
+  "fields": {
+    "product": 2,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.productinbasket",
+  "pk": 32,
+  "fields": {
+    "product": 12,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.productinbasket",
+  "pk": 34,
+  "fields": {
+    "product": 4,
+    "quantity": 1
   }
 },
 {
   "model": "webapp.order",
   "pk": 1,
   "fields": {
+    "user": 1,
     "name_user": "tyyy",
     "telephone": "yyy",
     "adress": "yyy",
@@ -145,10 +178,110 @@
   "model": "webapp.order",
   "pk": 2,
   "fields": {
+    "user": 1,
     "name_user": "thrwth",
     "telephone": "7",
     "adress": "8",
     "date_time": "2021-04-05T12:22:52.705Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "name_user": "gdgd",
+    "telephone": "gdgd",
+    "adress": "gdegdg",
+    "date_time": "2021-04-24T10:33:35.251Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "name_user": "feewfew",
+    "telephone": "fewfewfew",
+    "adress": "fwefewfew",
+    "date_time": "2021-04-24T10:53:54.104Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "name_user": "etrfgsd",
+    "telephone": "rgwfe",
+    "adress": "rgsedfrwc",
+    "date_time": "2021-04-24T11:20:46.979Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 6,
+  "fields": {
+    "user": 1,
+    "name_user": "etrfgsd",
+    "telephone": "rgwfe",
+    "adress": "rgsedfrwc",
+    "date_time": "2021-04-24T11:24:38.077Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 7,
+  "fields": {
+    "user": 1,
+    "name_user": "tretre",
+    "telephone": "ewrwerwwe",
+    "adress": "erwrewrew",
+    "date_time": "2021-04-24T11:27:49.870Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 8,
+  "fields": {
+    "user": 2,
+    "name_user": "trgfrvd",
+    "telephone": "trgfdc",
+    "adress": "ref",
+    "date_time": "2021-04-24T12:50:41.572Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 9,
+  "fields": {
+    "user": 2,
+    "name_user": "Admin",
+    "telephone": "45465",
+    "adress": "wewfe",
+    "date_time": "2021-04-26T08:51:51.204Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 10,
+  "fields": {
+    "user": 2,
+    "name_user": "referf",
+    "telephone": "ergfefr",
+    "adress": "fes",
+    "date_time": "2021-04-26T08:55:05.561Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 11,
+  "fields": {
+    "user": 2,
+    "name_user": "ijuhygtrf",
+    "telephone": "trgf",
+    "adress": "rgfe",
+    "date_time": "2021-04-26T09:08:32.884Z"
   }
 },
 {
@@ -179,11 +312,155 @@
   }
 },
 {
+  "model": "webapp.orderproduct",
+  "pk": 4,
+  "fields": {
+    "product": 3,
+    "order": 3,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 5,
+  "fields": {
+    "product": 9,
+    "order": 3,
+    "quantity": 4
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 6,
+  "fields": {
+    "product": 11,
+    "order": 4,
+    "quantity": 4
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 7,
+  "fields": {
+    "product": 6,
+    "order": 4,
+    "quantity": 2
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 8,
+  "fields": {
+    "product": 10,
+    "order": 4,
+    "quantity": 5
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 9,
+  "fields": {
+    "product": 10,
+    "order": 4,
+    "quantity": 2
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 10,
+  "fields": {
+    "product": 2,
+    "order": 6,
+    "quantity": 5
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 11,
+  "fields": {
+    "product": 6,
+    "order": 6,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 12,
+  "fields": {
+    "product": 10,
+    "order": 7,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 13,
+  "fields": {
+    "product": 6,
+    "order": 7,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 14,
+  "fields": {
+    "product": 2,
+    "order": 8,
+    "quantity": 3
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 15,
+  "fields": {
+    "product": 3,
+    "order": 8,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 16,
+  "fields": {
+    "product": 2,
+    "order": 9,
+    "quantity": 2
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 17,
+  "fields": {
+    "product": 1,
+    "order": 9,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 18,
+  "fields": {
+    "product": 12,
+    "order": 10,
+    "quantity": 1
+  }
+},
+{
+  "model": "webapp.orderproduct",
+  "pk": 19,
+  "fields": {
+    "product": 4,
+    "order": 11,
+    "quantity": 1
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$RTlmBocVnQgZ$D1u0av9Ej+9Qg9a54NpEEm4jZqEPWQQPkVLZ/jn6lhY=",
-    "last_login": "2021-04-05T06:49:00.617Z",
+    "last_login": "2021-04-26T12:21:09.808Z",
     "is_superuser": true,
     "username": "aiganysh",
     "first_name": "",
@@ -193,6 +470,26 @@
     "is_active": true,
     "date_joined": "2021-04-05T06:48:29.950Z",
     "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$KlYtdT4XF4oS$kG9inO4ZQuMd/cbjBPouRQQp3USwaAb1wX1UpA+4ud0=",
+    "last_login": "2021-04-26T12:24:13.988Z",
+    "is_superuser": false,
+    "username": "admin",
+    "first_name": "admin",
+    "last_name": "admin",
+    "email": "alexa@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-23T11:05:37Z",
+    "groups": [
+      1
+    ],
     "user_permissions": []
   }
 }

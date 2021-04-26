@@ -13,7 +13,7 @@ class Product(models.Model):
     category = models.TextField(null=False, blank=False, choices=categories, default='other')
     remainder = models.IntegerField(validators=[MinValueValidator(0)])
     price = models.DecimalField(max_digits=7, decimal_places=2, validators=[MinValueValidator(0)])
-    user = models.ManyToManyField(get_user_model(), related_name='products', null=False, blank=False, verbose_name='Пользователь')
+    # user = models.ManyToManyField(get_user_model(), related_name='products', null=False, blank=False, verbose_name='Пользователь')
 
 
     class Meta:

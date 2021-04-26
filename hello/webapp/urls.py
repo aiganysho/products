@@ -8,7 +8,9 @@ from webapp.views import (
     ProductBasketCreate,
     ProductBasketView,
     ProductBasketDelete,
-    CreateOrder
+    CreateOrder,
+    OrderView
+
 )
 
 app_name = 'product'
@@ -22,6 +24,7 @@ urlpatterns = [
     path('<int:pk>/add/product/', ProductBasketCreate.as_view(), name='add_cart'),
     path('basket/', ProductBasketView.as_view(), name='view_cart'),
     path('<int:pk>/basket/delete/', ProductBasketDelete.as_view(), name='delete_cart'),
-    path('basket/order/', CreateOrder.as_view(), name='order_cart')
+    path('basket/order/', CreateOrder.as_view(), name='order_cart'),
+    path('order/products/', OrderView.as_view(), name='order_prod')
 
 ]

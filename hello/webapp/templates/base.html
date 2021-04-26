@@ -12,8 +12,21 @@
 <body>
     <nav class="navbar">
         <ul class="menu">
-            <li><a href="{% url "list-product" %}">Product list</a></li>
+            <li><a href="{% url "product:list" %}">Product list</a></li>
             {% block menu %}{% endblock %}
+            {% if user.is_authenticated %}
+{#                <li class="menu-right"><a href="{% url 'accounts:logout' %}" class="nav-link">Выход</a></li>#}
+{#                 <li class="menu-right">Привет, {{ user.username }}!</li>#}
+{#            {% else %}#}
+{#                <li class="menu-right"><a href="{% url 'accounts:login' %}" class="nav-link">Вход</a></li>#}
+{#                <li class="menu-right"><a href="{% url 'accounts:create' %}?next={{ request.get_full_path }}" class="nav-link">Регистрация</a></li>#}
+{#            {% endif %}#}
+                <li><a href="{% url 'accounts:logout' %}?next={{ request.get_full_path }}">Logout</a></li>
+                    {% else %}
+                <li><a href="{% url 'accounts:login' %}?next={{ request.get_full_path }}">Login</a></li>
+                <li class="menu-right"><a href="{% url 'accounts:create' %}?next={{ request.get_full_path }}" class="nav-link">Регистрация</a></li>
+                    {% endif %}
+                {% include "partial/search_form.html" %}
         </ul>
     </nav>
 

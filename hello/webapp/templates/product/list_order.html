@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    {% for order in orders %}
+        <p>{{ order.pk }}</p>
+        {% for prod in order.order_product.all %}
+            <p>{{ prod.product.name }}</p>  {{ prod.product.price }}
+            {% endfor %}
+        <h3>Total: {{ order.sum_products }}</h3>
+
+
+
+        <h1> My orders: </h1>
+        <table class="table">
+          <thead>
+            <tr>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>Order №{{ order.pk }}</td>
+                        <br>
+                        <thead>
+                        <tr>
+                          <th scope="col">name</th>
+                          <th scope="col">price</th>
+                        </tr>
+                        </thead>
+                            {% for prod in order.order_product.all %}
+                                <tr>
+                                <td>{{ prod.product.name }}</td>
+                                <td>{{ prod.product.price }}</td>
+                            <h5>Total: {{ order.sum_products }}</h5>
+                                 <h5>Total: {{ order.sum_products }}</h5>
+                            {% endfor %}
+                                </tr>
+                        <br>
+                    {% endfor %}
+                </tbody>
+
+            </tr>
+          </thead>
+
+        </table>
+        <h5>Total: {{ order.sum_products }}</h5>
+
+
+    {% endfor %}
+{% endblock content %}

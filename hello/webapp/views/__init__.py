@@ -14,5 +14,6 @@ from webapp.views.product_basket import (
 )
 
 from webapp.views.order import (
-    CreateOrder
+    CreateOrder,
+    OrderView
 )

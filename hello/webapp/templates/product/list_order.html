@@ -8,10 +8,6 @@
 
 
         <h1> My orders: </h1>
-
-
-
-
                     {% for order in orders %}
                         <table class="table">
                         <thead>
@@ -30,17 +26,13 @@
                                 <tr>
                                 <td>{{ prod.product.name }}</td>
                                 <td>{{ prod.product.price }}</td>
-</tr>
+                                </tr>
                             {% endfor %}
 
                         </tbody>
-        </table>
+                        </table>
                         <br>
                         <h5>Total: {{ order.sum_products }}</h5>
                     {% endfor %}
-
-
-
-
 
 {% endblock content %}

@@ -45,6 +45,12 @@ class ProductInBasket(models.Model):
     def __str__(self):
         return f'{self.id} {self.product} {self.quantity}'
 
+# order = Order.objects.get(pk=2)
+# order_products = order.order_product.all()
+# # order.user.username
+# user = User.objects.get(pk=1)
+# orders = user.orders.all()
+
 
 class Order(models.Model):
     user = models.ForeignKey(

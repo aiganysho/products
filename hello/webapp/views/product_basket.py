@@ -27,8 +27,6 @@ class ProductBasketCreate(CreateView):
                 basket.quantity += form.cleaned_data.get("quantity")
                 basket.save()
             else:
-
-
                 basket = form.save(commit=False)
                 basket.product = product
 
@@ -54,7 +52,6 @@ class ProductBasketView(ListView):
         return ProductInBasket.objects.filter(pk__in=session)
 
     def get_context_data(self, *, object_list=None, **kwargs):
-
         context = super().get_context_data(**kwargs)
         total = 0
         total_product = []
@@ -75,15 +72,26 @@ class ProductBasketDelete(DeleteView):
     success_url = reverse_lazy('product:view_cart')
 
 
-    def delete(self, *args, **kwargs):
+    # def delete(self, *args, **kwargs):
+    #     session = self.request.session.get('basket', [])
+    #     print(session)
+    #     session.remove(self.get_object().pk)
+    #     self.request.session['basket'] = session
+    #     return super(ProductBasketDelete, self).delete(*args, **kwargs)
+
+
+    def post(self, request, *args, **kwargs):
+        product = Product.objects.get(pk=self.get_object().product.pk)
+        print(product.remainder)
+        product.remainder += self.get_object().quantity
+        print(product.remainder)
+        product.save()
+
         session = self.request.session.get('basket', [])
         print(session)
         session.remove(self.get_object().pk)
         self.request.session['basket'] = session
-        return super(ProductBasketDelete, self).delete(*args, **kwargs)
-
-
-
+        return super().delete(request)
 
 
 

@@ -6,7 +6,6 @@
 {% block content%}
     <form action="{% url "product:delete" product.id %}", method="POST">
         {% include 'partial/form.html' with button_text="Yes" %}
-{#        <input type="submit" value='yes'>#}
         </br>
         <a href="{% url "product:view" product.id %}">Cancellation!</a>
     </form>

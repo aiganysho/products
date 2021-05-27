@@ -17,4 +17,8 @@
     <p>Remainder: {{ product.remainder }}</p>
     <p>Price: {{ product.price }}</p>
 
+{#    <p><form action="{% url 'product:add_cart' product.pk %}" method="POST">#}
+{#        {% include 'partial/form.html' with button_text='Добавить в корзину' %}#}
+{#    </form></p>#}
+
 {% endblock content %}>

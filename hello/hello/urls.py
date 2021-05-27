@@ -22,10 +22,16 @@ from django.conf.urls.static import static
 
 HOMEPAGE_URL = 'webapp/'
 
+
+# api_urls = [
+#     path('prod/', include('api_product.urls')),
+# ]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('webapp/', include('webapp.urls')),
     path('accounts/', include('accounts.urls')),
+    path('api/', include('api_product.urls')),
     path('', RedirectView.as_view(url=HOMEPAGE_URL, permanent=False)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
